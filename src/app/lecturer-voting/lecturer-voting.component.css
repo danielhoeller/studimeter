@@ -1,0 +1,24 @@
+main {
+  display: grid;
+  grid-template-rows: 380px 380px;
+  grid-template-columns: 380px 380px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  padding: 1em;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+div label {
+  margin-top: 1em;
+}
+
+.mitarbeit {
+  grid-column: span 2;
+  padding: 1em;
+}

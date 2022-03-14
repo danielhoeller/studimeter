@@ -1,0 +1,69 @@
+<main>
+  <div class="mat-elevation-z2">
+    <label>Motivation</label>
+    <ngx-charts-gauge
+      *ngIf="motivation$ | async as motivation"
+      [view]="[380, 380]"
+      [results]="[motivation]"
+      [max]="5"
+      [min]="1"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0"
+    >
+    </ngx-charts-gauge>
+  </div>
+
+  <div class="mat-elevation-z2">
+    <label>Materialien</label>
+    <ngx-charts-gauge
+      [view]="[380, 380]"
+      *ngIf="materials$ | async as motivation"
+      [results]="[motivation]"
+      [max]="5"
+      [min]="1"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0"
+    >
+    </ngx-charts-gauge>
+  </div>
+
+  <div class="mat-elevation-z2">
+    <label>Antworten</label>
+    <ngx-charts-gauge
+      [view]="[380, 380]"
+      #answersGauge
+      id="answersGauge"
+      *ngIf="answers$ | async as motivation"
+      [results]="[motivation]"
+      [max]="5"
+      [min]="1"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0"
+    >
+    </ngx-charts-gauge>
+  </div>
+
+  <div class="mat-elevation-z2">
+    <label> Geschwindigkeit </label>
+    <ngx-charts-gauge
+      [view]="[380, 380]"
+      *ngIf="speed$ | async as motivation"
+      [results]="[motivation]"
+      [max]="5"
+      [min]="1"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0"
+    >
+    </ngx-charts-gauge>
+  </div>
+
+  <div class="mitarbeit mat-elevation-z2">
+    <mat-label>Mitarbeit</mat-label>
+    <mat-slider thumbLabel [min]="1" [max]="5"></mat-slider>
+    <label class="example-value-label"></label>
+  </div>
+</main>

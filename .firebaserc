@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "studimeter": {
+      "hosting": {
+        "studimeter-app": [
+          "studimeter"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "studimeter"
+  }
+}

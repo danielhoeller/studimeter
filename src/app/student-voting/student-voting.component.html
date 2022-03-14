@@ -1,0 +1,55 @@
+<main>
+  <form [formGroup]="votingForm">
+    <p>
+      <mat-label>Materialien</mat-label>
+      <mat-slider
+        thumbLabel
+        [min]="1"
+        [max]="5"
+        formControlName="materials"
+      ></mat-slider>
+      <label class="example-value-label">{{
+        votingForm.controls.materials.value
+      }}</label>
+    </p>
+
+    <p>
+      <mat-label>Antworten</mat-label>
+      <mat-slider
+        thumbLabel
+        [min]="1"
+        [max]="5"
+        formControlName="answers"
+      ></mat-slider>
+
+      <label class="example-value-label">{{
+        votingForm.controls.answers.value
+      }}</label>
+    </p>
+
+    <p>
+      <mat-label>Motivation</mat-label>
+      <mat-slider
+        thumbLabel
+        [min]="1"
+        [max]="5"
+        formControlName="motivation"
+      ></mat-slider>
+      <label class="example-value-label">{{
+        votingForm.controls.motivation.value
+      }}</label>
+    </p>
+    <p>
+      <mat-label>Geschwindigkeit</mat-label>
+      <mat-slider
+        thumbLabel
+        [min]="1"
+        [max]="5"
+        formControlName="speed"
+      ></mat-slider>
+      <label class="example-value-label">{{
+        votingForm.controls.speed.value
+      }}</label>
+    </p>
+  </form>
+</main>
