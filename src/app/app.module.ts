@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { QRCodeModule } from 'angularx-qrcode';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideDatabase, getDatabase } from '@angular/fire/database';
-import { LoginComponent } from './login/login.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { QRCodeViewerComponent } from './qrcode-viewer/qrcode-viewer.component';
-import { QRCodeScannerComponent } from './qrcode-scanner/qrcode-scanner.component';
-import { QRCodeModule } from 'angularx-qrcode';
-import { StudentVotingComponent } from './student-voting/student-voting.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import { LecturerVotingComponent } from './lecturer-voting/lecturer-voting.component';
-import { MatSliderModule } from '@angular/material/slider';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LoginComponent } from './login/login.component';
+import { QRCodeScannerComponent } from './qrcode-scanner/qrcode-scanner.component';
+import { QRCodeViewerComponent } from './qrcode-viewer/qrcode-viewer.component';
+import { StudentVotingComponent } from './student-voting/student-voting.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     QRCodeScannerComponent,
     StudentVotingComponent,
     LecturerVotingComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatFormFieldModule,
     MatButtonModule,
     MatSliderModule,
+    MatCardModule,
+    MatDividerModule,
 
     // Ngx Charts
     NgxChartsModule,
