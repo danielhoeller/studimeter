@@ -1,12 +1,25 @@
 <main>
+  <div class="aside">
+    <div
+      class="example-time"
+      *ngFor="let t of times"
+      >
+      {{t}}
+      </div>
+  </div>
   <mat-card
     class="example-card"
     *ngFor="let lecture of lectureData"
     (click)="onLectureClick()"
+    [ngStyle]="{'grid-row': convertTimeToPos(lecture.startsAt) + '/' + convertTimeToPos(lecture.endsAt)}"
   >
+
     <mat-card-subtitle>{{ lecture.startsAt }}</mat-card-subtitle>
     <mat-card-title>{{ lecture.name }}</mat-card-title>
     <mat-card-content> </mat-card-content>
   </mat-card>
-  <mat-divider class="divider"></mat-divider>
+  <mat-divider
+    class="divider"
+    [ngStyle]="{'grid-row': convertTimeToPos(curTime())}"
+    ></mat-divider>
 </main>
