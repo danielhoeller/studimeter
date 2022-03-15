@@ -61,9 +61,26 @@
     </ngx-charts-gauge>
   </div>
 
+  <div class="kcenter mat-accent mat-elevation-z2">
+    <label> Koeffizient </label>
+    <ngx-charts-gauge
+      [view]="[190, 190]"
+      *ngIf="speed$ | async as coefficient"
+      [results]="[coefficient]"
+      [max]="1"
+      [min]="0"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0.1"
+    >
+    </ngx-charts-gauge>
+  </div>
+
   <div class="mitarbeit mat-elevation-z2">
     <mat-label>Mitarbeit</mat-label>
     <mat-slider thumbLabel [min]="1" [max]="5"></mat-slider>
     <label class="example-value-label"></label>
   </div>
+
+
 </main>

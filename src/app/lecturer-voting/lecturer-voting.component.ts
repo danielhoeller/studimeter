@@ -27,6 +27,7 @@ export class LecturerVotingComponent implements OnInit, AfterViewInit {
   answers$: Observable<{ value: number; name: string }>;
   materials$: Observable<{ value: number; name: string }>;
   motivation$: Observable<{ value: number; name: string }>;
+  // coefficient$: Observable<{ value: number; name: string }>;
 
   @ViewChildren(GaugeComponent) gauges!: QueryList<GaugeComponent>;
 
@@ -58,6 +59,9 @@ export class LecturerVotingComponent implements OnInit, AfterViewInit {
     this.speed$ = this.currentAverage$.pipe(
       map((avg) => ({ name: 'speed', value: avg.speed }))
     );
+    /* this.coefficient$ = this.currentAverage$.pipe(
+      map((avg) => ({ name: 'coefficient', value: avg.coefficient }))
+    ); */
   }
 
   ngOnInit(): void {}

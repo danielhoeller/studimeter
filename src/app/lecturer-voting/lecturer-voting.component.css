@@ -1,7 +1,7 @@
 main {
   display: grid;
-  grid-template-rows: 380px 380px;
-  grid-template-columns: 380px 380px;
+  grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px;
+  grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-content: center;
@@ -12,13 +12,29 @@ div {
   display: flex;
   flex-direction: column;
   text-align: center;
+  grid-column: span 4;
+  grid-row: span 4;
 }
 
 div label {
   margin-top: 1em;
 }
 
+div.kcenter {
+  position: absolute;
+  top:calc(380px + 40px * 2 - 60px);
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:calc(95px * 2);
+  width:calc(95px * 2);
+  /* border-radius:10px; */
+  /* grid-area: 3 / 3 / 6 / 6; */
+  background-color:#ff4081;
+  z-index: 2;
+
+}
+
 .mitarbeit {
-  grid-column: span 2;
+  grid-column: span 8;
   padding: 1em;
 }
