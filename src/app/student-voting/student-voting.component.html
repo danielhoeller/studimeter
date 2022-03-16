@@ -1,4 +1,17 @@
 <main>
+  <div class="mat-elevation-z2">
+    <label>Mitarbeit</label>
+    <ngx-charts-gauge
+      [view]="[380, 380]"
+      [results]="[{ value: 3, name: 'Mitarbeit' }]"
+      [max]="5"
+      [min]="1"
+      [startAngle]="-90"
+      [angleSpan]="180"
+      [smallSegments]="0"
+    >
+    </ngx-charts-gauge>
+  </div>
   <form [formGroup]="votingForm">
     <p>
       <mat-label>Materialien</mat-label>
