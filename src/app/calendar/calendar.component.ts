@@ -35,13 +35,32 @@ export class CalendarComponent implements OnInit {
   ];
 
   times = new Array(48).fill(0);
+  intervalId:number = 0;
 
   ngOnInit(): void {
   }
+
   ngAfterViewInit(): void {
     document.getElementsByTagName('mat-card')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"}); // Scrolls first element into view
+    this.startUpdateDivider();
   }
-  
+
+  ngOnDestroy(): void {
+    this.stopUpdateDivider();
+  }
+
+  startUpdateDivider(){
+    const divider = document.getElementsByTagName('mat-divider')[0] as HTMLElement;
+    this.intervalId = window.setInterval(
+    () => {
+      let gR = this.convertTimeToPos(this.curTime()).toString();
+      divider.style.gridRow = gR;
+    }, 60*1000);
+  }
+
+  stopUpdateDivider(){
+    window.clearInterval(this.intervalId);
+  }
 
   curTime(){
     return `${new Date().getHours()}:${new Date().getMinutes()}`
@@ -49,7 +68,7 @@ export class CalendarComponent implements OnInit {
 
   convertTimeToPos(str: string){
     let times = str.split(':').map((e:string)=>{return Number(e)});
-    return times[0]*12 + times[1]/5;
+    return Math.floor(times[0]*12 + times[1]/5);
   }
 
   onLectureClick() {
