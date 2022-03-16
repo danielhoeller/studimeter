@@ -4,7 +4,7 @@ main {
   grid-template-rows: repeat(288, 1fr); /* each fr = 5min */
   grid-template-columns: 50px 1fr;
   grid-column-gap: 20px;
-  height: 100%;
+  height: 200%;
   justify-content: center;
   padding: 1em;
 }
@@ -14,14 +14,22 @@ button {
 }
 
 div.aside {
+  display:grid;
   grid-template-rows: repeat(48, 1fr); /* each fr = 30min */
   grid-column: 1 / 1;
   grid-row: 1 / au;
   background-color: #ff4081;
 }
 
+.example-time:first-child {
+  border-top: 0px solid;
+}
 .example-time {
-  grid-row: span 6; /* 12 = 1h, 6 = 30min */
+  border-top: 1px solid;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  grid-row: span 1; /* 12 = 1h, 6 = 30min */
   width: 100%;
   padding: 0;
 }
@@ -35,6 +43,7 @@ div.aside {
 }
 
 mat-card-subtitle {
+  padding:10px;
   text-align: left;
 }
 
@@ -53,8 +62,6 @@ mat-card-subtitle {
     border-color: #ff4081;
     border-top-width: 3px;
     width: 450px;
-    position: absolute;
-    bottom: 150px;
   }
   .example-card {
     width: 400px;

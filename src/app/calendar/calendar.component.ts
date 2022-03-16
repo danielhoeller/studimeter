@@ -36,7 +36,12 @@ export class CalendarComponent implements OnInit {
 
   times = new Array(48).fill(0);
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+  ngAfterViewInit(): void {
+    document.getElementsByTagName('mat-card')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"}); // Scrolls first element into view
+  }
+  
 
   curTime(){
     return `${new Date().getHours()}:${new Date().getMinutes()}`

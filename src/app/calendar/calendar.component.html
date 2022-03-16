@@ -19,7 +19,8 @@
     <mat-card-content> </mat-card-content>
   </mat-card>
   <mat-divider
-    class="divider"
+    [style.grid-row]="convertTimeToPos(curTime())"
     [ngStyle]="{'grid-row': convertTimeToPos(curTime())}"
+    class="divider" 
     ></mat-divider>
 </main>
