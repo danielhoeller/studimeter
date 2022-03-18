@@ -32,6 +32,11 @@ export class CalendarComponent implements OnInit {
       endsAt: '15:25',
       name: '20_SPS2UE',
     },
+    /* {
+      startsAt: '19:10',
+      endsAt: '21:25',
+      name: 'test',
+    }, */
   ];
 
   times = new Array(48).fill(0);
@@ -41,8 +46,13 @@ export class CalendarComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    document.getElementsByTagName('mat-card')[0].scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"}); // Scrolls first element into view
     this.startUpdateDivider();
+  }
+
+  ngAfterViewChecked(): void {
+    let matCards = document.getElementsByTagName('mat-card');
+    matCards[0].scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); // Scrolls first element into view
+    // window.scrollBy(0, -100);
   }
 
   ngOnDestroy(): void {

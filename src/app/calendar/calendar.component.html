@@ -12,7 +12,7 @@
     *ngFor="let lecture of lectureData"
     (click)="onLectureClick()"
     [ngStyle]="{'grid-row': convertTimeToPos(lecture.startsAt) + '/' + convertTimeToPos(lecture.endsAt)}"
-  >
+    [style.background-color]="convertTimeToPos(lecture.startsAt) < convertTimeToPos(curTime()) && convertTimeToPos(curTime()) < convertTimeToPos(lecture.endsAt) ? '#7986cb': ''">
 
     <mat-card-subtitle>{{ lecture.startsAt }}</mat-card-subtitle>
     <mat-card-title>{{ lecture.name }}</mat-card-title>

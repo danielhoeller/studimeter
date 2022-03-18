@@ -14,7 +14,18 @@ div {
   text-align: center;
   grid-column: span 4;
   grid-row: span 4;
+  background-color: #AAAAAA60;
 }
+/* @media (prefers-color-scheme: dark) {
+  main {
+    background-color: #454545;
+    color: #eeeeee;
+  }
+  svg g.gauge, svg g.gauge-tick, svg g path, svg g text{
+    stroke: #000;
+    fill: #000;
+  }
+} */
 
 div label {
   margin-top: 1em;
